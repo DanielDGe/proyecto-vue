@@ -9,12 +9,14 @@
         </div>
     </div>
 </template>
+
 <script setup>
 import Sidebar from '../components/Sidebar.vue';
 import Header from '../components/Header.vue';
 import {ref} from 'vue';
 const texto = ref('');
 </script>
+
 <style>
 .container {
     display: flex;

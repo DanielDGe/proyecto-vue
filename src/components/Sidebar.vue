@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-import { useRegistrarStore } from '@/modules/registro/stores/registrarStore';
 
+import { useRegistrarStore } from '@/modules/registro/stores/registrarStore';
 const registrarStore = useRegistrarStore();
 
 </script>

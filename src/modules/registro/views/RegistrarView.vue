@@ -20,10 +20,11 @@
 </template>
 
 <script setup>
+
 import {Form, Field, ErrorMessage} from 'vee-validate';
 import {schema} from '../schemas/validationSchema';
 import {useRegistrarStore} from '../stores/registrarStore';
-import {ref} from 'vue';
+import {onMounted, ref} from 'vue';
 
 const registrarStore = useRegistrarStore();
 
@@ -34,6 +35,18 @@ const onSubmit = () => {
     registrarStore.guardarRegistro(nombre.value, email.value);
     console.log('Se ha enviado el formulario');
 }
+
+onMounted(() => {
+    
+    if (registrarStore.nombre != '') {
+        nombre.value = registrarStore.nombre;
+        email.value = registrarStore.email;
+    } else {
+        console.log('Sin registro en el store');
+    }
+    
+});
+
 </script>
 
 <style scoped>
